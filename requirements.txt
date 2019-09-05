@@ -3,3 +3,6 @@ This project requires certain modules to be to installed inorder to work functio
 1 - Beautiful soup 
 Installation using PIP: pip install bs4 
 https://pypi.org/project/beautifulsoup4/
+
+2 - Requests 
+Installation using PIP: pip install requests 
