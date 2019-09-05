@@ -21,7 +21,8 @@ song_website = requests.get('https://www.lyricsmode.com'+links[12]).text
 song_soup = BeautifulSoup(song_website,'lxml')
 #Prints the lyrics
 try:
-    print(song_soup.find('div', id = "lyrics_text").text)
+    lyrics = song_soup.find('div', id = "lyrics_text").text
+    #DONOT EDIT --- print(f'Song name:{Song}\nSong artist: {}')
 #Scenario if any error is raised
 except:
     print('Song not found in the database')
@@ -34,5 +35,4 @@ def file_digest():
         Placeholder for the file input function using f.
         '''
         fileQ -= 1
-#as file
 file_digest()
