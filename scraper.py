@@ -20,7 +20,6 @@ song = input('Enter the songs name:')
 website = requests.get('https://google.com/search?q=%s'+song+'song')
 soup = BeautifulSoup(website, 'lxml')
 
-
 #file digestion
 def file_digest():
     fileQ = 5 #placeholder value
