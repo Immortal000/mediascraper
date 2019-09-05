@@ -1,7 +1,5 @@
 from bs4 import BeautifulSoup
 import requests
-from bs4 import lxml
-
 '''
 Format:
 Song name:
@@ -11,15 +9,22 @@ Song description, background information:
 Music video link:
 Lyrics(optional):
 '''
-
-#All the websites used:
-websites = ['https://www.genius.com', 'https://www.shazam.com', 'https://www.musicbrainz.org']
-song = input('Enter the songs name:')
-
-#Extracting the music video
-website = requests.get('https://google.com/search?q=%s'+song+'song')
-soup = BeautifulSoup(website, 'lxml')
-
+song = input('Enter the songs name:') 
+#Gets the website 
+website = requests.get('https://www.lyricsmode.com/search.php?search='+song).text
+soup = BeautifulSoup(website,'lxml')
+#Finds for the links of the song 
+for a in soup.find_all('a', href=True):
+    links.append(a['href'])
+#Gets the weblink of the song lyric
+song_website = requests.get('https://www.lyricsmode.com'+links[12]).text
+song_soup = BeautifulSoup(song_website,'lxml')
+#Prints the lyrics
+try: 
+    print(song_soup.find('div', id = "lyrics_text").text)
+#Scenario if any error is raised
+except: 
+    print('Song not found in the database')
 #file digestion
 def file_digest():
     fileQ = 5 #placeholder value
