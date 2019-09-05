@@ -1,4 +1,5 @@
 This project requires certain modules to be to installed inorder to work functionally. 
 
 1 - Beautiful soup 
-Installation on Windows: pip install bs4 
+Installation using PIP: pip install bs4 
+https://pypi.org/project/beautifulsoup4/
