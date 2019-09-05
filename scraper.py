@@ -1,5 +1,7 @@
+
 from bs4 import BeautifulSoup
 import requests
+links = []
 '''
 Format:
 Song name:
@@ -22,6 +24,7 @@ song_soup = BeautifulSoup(song_website,'lxml')
 #Prints the lyrics
 try:
     lyrics = song_soup.find('div', id = "lyrics_text").text
+    print(lyrics)
     #DONOT EDIT --- print(f'Song name:{Song}\nSong artist: {}')
 #Scenario if any error is raised
 except:
