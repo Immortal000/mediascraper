@@ -19,6 +19,8 @@ soup = BeautifulSoup(website,'lxml')
 #Finds for the links of the song
 for a in soup.find_all('a', href=True):
     links.append(a['href'])
+'''for link in links:
+    print(link)'''
 #Gets the weblink of the song lyric
 song_website = requests.get('https://www.lyricsmode.com'+links[12]).text
 song_soup = BeautifulSoup(song_website,'lxml')
