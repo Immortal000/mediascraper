@@ -22,8 +22,6 @@ soup = BeautifulSoup(website,'lxml')
 #Finds for the links of the song
 for a in soup.find_all('a', href=True):
     links.append(a['href'])
-'''for link in links:
-    print(link)'''
 #Gets the weblink of the song lyric
 song_website = requests.get('https://www.lyricsmode.com'+links[12]).text
 song_soup = BeautifulSoup(song_website,'lxml')
@@ -31,8 +29,10 @@ song_soup = BeautifulSoup(song_website,'lxml')
 try:
     lyrics = song_soup.find('div', id = "lyrics_text").text
     #DONOT EDIT --- print(f'Song name:{Song}\nSong artist: {}')
-    artist_name = song_soup.find_all("div", class_="fs32")
-    print(artist_name,'/n',lyrics)
+    artist_name = song_soup.find('span', attrs={'class':'fs32'}).text
+    print(artist_name,lyrics)
+    google_search = requests.get('https://www.google.com/search?q=',song,artist_name)
+    google_soup = BeautifulSoup(google_search, )
 #Scenario if any error is raised
 except:
     print('Song not found in the database')
