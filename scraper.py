@@ -1,7 +1,9 @@
-from bs4 import BeautifulSoup 
-import requests               
-import re  
 
+###############################
+from bs4 import BeautifulSoup #
+import requests               #
+import re                     #
+###############################
 links = []
 
 '''
@@ -12,7 +14,6 @@ Release date:
 Song description, background information:
 Music video link:
 Lyrics(optional):
-
 '''
 song = input('Enter the songs name:')
 #Gets the website
@@ -26,13 +27,16 @@ song_website = requests.get('https://www.lyricsmode.com'+links[12]).text
 song_soup = BeautifulSoup(song_website,'lxml')
 #Prints the lyrics
 try:
+    yt_links = []
     lyrics = song_soup.find('div', id = "lyrics_text").text
     #DONOT EDIT --- print(f'Song name:{Song}\nSong artist: {}')
     artist_name = song_soup.find('span', attrs={'class':'fs32'}).text
-    print(artist_name,lyrics)
-    google_search = requests.get('https://www.google.com/search?q='+song,artist_name)
+    google_search = requests.get('https://www.youtube.com/results?search_query='+song,artist_name).text
     google_soup = BeautifulSoup(google_search, 'lxml')
-
+    for l in google_soup.find_all('a', href=True):
+        yt_links.append(l['href'])
+    print(f"Song Name| {song}\nYoutube Link|{yt_links[146]}\nLyrics:\n{lyrics}")
+        
 #Scenario if any error is raised
 except:
     print('Song not found in the database')
@@ -42,6 +46,11 @@ def file_digest():
     fileQ = 5 #placeholder value
     #fileQ is the number of files
     while fileQ != 0:
+        '''
+        Placeholder for the file input function using f.
+        '''
         fileQ -= 1
 file_digest()
+
+#Working on the formatting 
 
