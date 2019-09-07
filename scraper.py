@@ -31,11 +31,11 @@ try:
     lyrics = song_soup.find('div', id = "lyrics_text").text
     #DONOT EDIT --- print(f'Song name:{Song}\nSong artist: {}')
     artist_name = song_soup.find('span', attrs={'class':'fs32'}).text
-    google_search = requests.get('https://www.youtube.com/results?search_query='+song,artist_name).text
-    google_soup = BeautifulSoup(google_search, 'lxml')
-    for l in google_soup.find_all('a', href=True):
-        yt_links.append(l['href'])
-    print(f"Song Name| {song}\nYoutube Link|{yt_links[146]}\nLyrics:\n{lyrics}")
+    yt_search = requests.get('https://www.google.com/search?q=youtube+link'+song+artist_name).text
+    yt_soup = BeautifulSoup(yt_search, 'lxml')
+    for l in soup.find_all('a', href=True):
+        links.append(l['href'])
+    #print(f"Song Name|{song}\nYoutube Link|{yt_links[146]}\nLyrics:\n{lyrics}")
         
 #Scenario if any error is raised
 except:
