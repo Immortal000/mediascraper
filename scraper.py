@@ -25,13 +25,16 @@ except:
     print('Song not found in the database')
 
 #Searching for youtube Link
-
-yt_search = requests.get('https://www.youtube.com/results?search_query='+song+artist_name,'youtube+link').text
+yt_links = []
+yt_search = requests.get('https://www.bing.com/videos/search?q='+song+artist_name,'youtube+link').text
 yt_soup = BeautifulSoup(yt_search, 'html.parser')
-a = yt_soup.find_all("a", href=True)
+a = yt_soup.findAll("div",{"class":"mc_vtvc"})
 for i in a:
-    url = i.get('href')
-    print(f'\t\t{url}')
+    print(i)
+'''for i in a:
+    yt_links.append(i.get('href'))
+print(yt_links)''' 
+
 #file digestion
 
 def file_digest():
