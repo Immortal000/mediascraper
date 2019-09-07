@@ -1,7 +1,8 @@
 
 from bs4 import BeautifulSoup
 import requests
-import re 
+import re
+
 links = []
 '''
 Format:
@@ -12,6 +13,7 @@ Song description, background information:
 Music video link:
 Lyrics(optional):
 '''
+
 song = input('Enter the songs name:')
 #Gets the website
 website = requests.get('https://www.lyricsmode.com/search.php?search='+song).text
@@ -38,8 +40,5 @@ def file_digest():
     fileQ = 5 #placeholder value
     #fileQ is the number of files
     while fileQ != 0:
-        '''
-        Placeholder for the file input function using f.
-        '''
         fileQ -= 1
 file_digest()
