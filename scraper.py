@@ -31,8 +31,10 @@ try:
     #DONOT EDIT --- print(f'Song name:{Song}\nSong artist: {}')
     artist_name = song_soup.find('span', attrs={'class':'fs32'}).text
     print(artist_name,lyrics)
-    google_search = requests.get('https://www.google.com/search?q=',song,artist_name)
-    google_soup = BeautifulSoup(google_search, )
+    google_search = requests.get('https://www.google.com/search?q='+song,artist_name)
+    google_soup = BeautifulSoup(google_search, 'lxml')
+    yt_link = google_search.find('cite', attrs={'class':'iUh30 bc'}).text
+        
 #Scenario if any error is raised
 except:
     print('Song not found in the database')
