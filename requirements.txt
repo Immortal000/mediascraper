@@ -1,11 +1,8 @@
-This project requires certain modules to be to installed inorder to work functionally. 
+beautifulsoup4==4.8.0
+bs4==0.0.1
+eyeD3==0.8.10
+libmagic==1.0
+lxml==4.4.1
+requests==2.22.0
 
-1 - Beautiful soup 
-Installation using PIP: pip install bs4 
-https://pypi.org/project/beautifulsoup4/
 
-2 - Requests 
-Installation using PIP: pip install requests 
-
-3 - eyed3
-Installation using PIP: pip install eyed3
