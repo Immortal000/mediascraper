@@ -1,4 +1,3 @@
 *.mp3
 .DS_Store
-test-mp3.mp3
-*.mp3
+ingest.py
