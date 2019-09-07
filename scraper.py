@@ -1,9 +1,16 @@
+<<<<<<< HEAD
+from bs4 import BeautifulSoup 
+import requests
+import re
+
+=======
 
 ###############################
 from bs4 import BeautifulSoup #
 import requests               #
 import re                     #
 ###############################
+>>>>>>> ab7441d01dee892ba692ccb94ece4406ccdab574
 links = []
 
 '''
@@ -15,6 +22,7 @@ Song description, background information:
 Music video link:
 Lyrics(optional):
 '''
+
 song = input('Enter the songs name:')
 #Gets the website
 website = requests.get('https://www.lyricsmode.com/search.php?search='+song).text
@@ -33,8 +41,16 @@ try:
     print(artist_name,lyrics)
     google_search = requests.get('https://www.google.com/search?q='+song,artist_name)
     google_soup = BeautifulSoup(google_search, 'lxml')
+<<<<<<< HEAD
+    yt_link = google_soup.find('cite', attrs={'class':'iUh30 bc'})
+=======
     yt_link = google_search.find('cite', attrs={'class':'iUh30 bc'}).text
+<<<<<<< HEAD
+
+=======
+>>>>>>> c0e1a120cc80242d2ae2b864d66bb64be4132a5c
         
+>>>>>>> ab7441d01dee892ba692ccb94ece4406ccdab574
 #Scenario if any error is raised
 except:
     print('Song not found in the database')
@@ -44,12 +60,13 @@ def file_digest():
     fileQ = 5 #placeholder value
     #fileQ is the number of files
     while fileQ != 0:
-        '''
-        Placeholder for the file input function using f.
-        '''
         fileQ -= 1
 file_digest()
 
+<<<<<<< HEAD
+#Working on the formatting
+=======
 #Working on the formatting 
+>>>>>>> ab7441d01dee892ba692ccb94ece4406ccdab574
 
 #print(f"Song Name| {song_name}\nRelease Date| {release_date}\nYoutube Link|{yt_link}\nLyrics:\n{lyrics}")
