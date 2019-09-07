@@ -1,8 +1,11 @@
 
-from bs4 import BeautifulSoup
-import requests
-import re 
+###############################
+from bs4 import BeautifulSoup #
+import requests               #
+import re                     #
+###############################
 links = []
+
 '''
 Format:
 Song name:
@@ -27,8 +30,9 @@ song_soup = BeautifulSoup(song_website,'lxml')
 #Prints the lyrics
 try:
     lyrics = song_soup.find('div', id = "lyrics_text").text
-    print(lyrics)
     #DONOT EDIT --- print(f'Song name:{Song}\nSong artist: {}')
+    artist_name = song_soup.find_all("div", class_="fs32")
+    print(artist_name,'/n',lyrics)
 #Scenario if any error is raised
 except:
     print('Song not found in the database')
@@ -43,3 +47,7 @@ def file_digest():
         '''
         fileQ -= 1
 file_digest()
+
+#Working on the formatting 
+
+#print(f"Song Name| {song_name}\nRelease Date| {release_date}\nYoutube Link|{yt_link}\nLyrics:\n{lyrics}")
