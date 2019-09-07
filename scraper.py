@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-from bs4 import BeautifulSoup 
+from bs4 import BeautifulSoup
 import requests
 import re
 
-=======
-
-###############################
-from bs4 import BeautifulSoup #
-import requests               #
-import re                     #
-###############################
->>>>>>> ab7441d01dee892ba692ccb94ece4406ccdab574
 links = []
 
 '''
@@ -45,7 +36,7 @@ try:
 <<<<<<< HEAD
 
 =======
-        
+
 >>>>>>> ab7441d01dee892ba692ccb94ece4406ccdab574
 #Scenario if any error is raised
 except:
@@ -62,7 +53,7 @@ file_digest()
 <<<<<<< HEAD
 #Working on the formatting
 =======
-#Working on the formatting 
+#Working on the formatting
 >>>>>>> ab7441d01dee892ba692ccb94ece4406ccdab574
 
 #print(f"Song Name| {song_name}\nRelease Date| {release_date}\nYoutube Link|{yt_link}\nLyrics:\n{lyrics}")
