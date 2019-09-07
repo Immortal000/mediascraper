@@ -3,6 +3,8 @@
 from bs4 import BeautifulSoup #
 import requests               #
 import re                     #
+import eyed3                  #
+import lxml                   #
 ###############################
 links = []
 
