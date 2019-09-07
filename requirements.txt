@@ -6,3 +6,6 @@ https://pypi.org/project/beautifulsoup4/
 
 2 - Requests 
 Installation using PIP: pip install requests 
+
+3 - eyed3
+Installation using PIP: pip install eyed3
