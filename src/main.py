@@ -2,7 +2,8 @@
 ###############################
 from bs4 import BeautifulSoup #
 import requests               #
-import re                     #                
+import re                     #         
+from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH # 
 ###############################
 global song, artist_name, index
 index = 12 
@@ -45,9 +46,13 @@ def file_digest():
     fileQ = 5 #placeholder value
     #fileQ is the number of files
     while fileQ != 0:
-        '''
-        Placeholder for the file input function using f.
-        '''
+         # Create MP3File instance.
+        mp3 = MP3File("test.mp3")
+        alb = mp3.album
+
+        #get the music tags
+        mp3Tags = mp3.get_tags()
+        
         fileQ -= 1
 file_digest()
 
