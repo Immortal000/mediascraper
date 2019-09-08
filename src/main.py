@@ -3,6 +3,7 @@
 from bs4 import BeautifulSoup #
 import requests               #
 import re                     #         
+import eyed3                  #
 ###############################
 global song, artist_name, index
 index = 12 
@@ -46,9 +47,7 @@ def file_digest():
     fileQ = 5 #placeholder value
     #fileQ is the number of files
     while fileQ != 0:
-        '''
-        Placeholder for the file input function using f.
-        '''
+         
         fileQ -= 1
 file_digest()
 
