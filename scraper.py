@@ -26,19 +26,19 @@ def get_lyrics(song, index):
           index = index + 2
           get_lyrics(song,index)
      else:
-          continue
+          get_youtube_link(song,artist_name)
 get_lyrics(song,index)
 
-#Searching for youtube Link
-'''yt_links = []
-yt_search = requests.get('https://www.bing.com/videos/search?q='+song+artist_name,'youtube+link').text
-yt_soup = BeautifulSoup(yt_search, 'html.parser')
-a = yt_soup.findAll("div",{"class":"mc_vtvc"})
-for i in a:
-    print(i)
-for i in a:
-    yt_links.append(i.get('href'))
-print(yt_links)''' 
+def get_youtube_link(song,artist_name): 
+     yt_links = []
+     yt_search = requests.get('https://www.bing.com/videos/search?q='+song+artist_name,'youtube+link').text
+     yt_soup = BeautifulSoup(yt_search, 'html.parser')
+     a = yt_soup.findAll("div",{"class":"mc_vtvc"})
+     for i in a:
+         print(i)
+     for i in a:
+         yt_links.append(i.get('href'))
+     print(yt_links)
 
 #file digestion
 
