@@ -3,7 +3,8 @@
 from bs4 import BeautifulSoup                                      #
 import requests                                                    #
 import re                                                          #         
-from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH # 
+from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH #
+import tkinter as tk                                               # 
 ####################################################################
 global song, artist_name, index
 index = 12 
@@ -39,7 +40,6 @@ def get_lyrics(song, index):
           get_youtube_link(song,artist_name)
 get_lyrics(song,index)
 
-
 #file digestion
 
 def file_digest():
@@ -54,7 +54,5 @@ def file_digest():
         mp3Tags = mp3.get_tags()
         
         fileQ -= 1
-file_digest()
-
-#Working on the formatting 
+file_digest() 
 
