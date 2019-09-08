@@ -1,10 +1,10 @@
 
-###############################
-from bs4 import BeautifulSoup #
-import requests               #
-import re                     #         
+####################################################################
+from bs4 import BeautifulSoup                                      #
+import requests                                                    #
+import re                                                          #         
 from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH # 
-###############################
+####################################################################
 global song, artist_name, index
 index = 12 
 song = input('Song:')
