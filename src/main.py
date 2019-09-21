@@ -6,6 +6,7 @@ import re                                                          #
 from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH #
 import tkinter as tk                                               # 
 ####################################################################
+
 global song, artist_name, index
 index = 12 
 song = input('Song:')
@@ -29,7 +30,7 @@ def get_lyrics(song, index):
      try: 
           lyrics = song_soup.find('div', id = "lyrics_text").text
           artist_name = song_soup.find('span', attrs={'class':'fs32'}).text
-          print(f"Song Name|{song}\nArtist Name|{artist_name}\nLyrics:\n{lyrics}")     
+          print(f"Song Name|{song}\nArtist Name|{artist_name}\nLyrics:\n{lyrics}\n Lyrics are from www.lyricsmode.com")     
      except: 
          print('Song not found in database')
      answer = input('Is this the right song?')
