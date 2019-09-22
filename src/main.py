@@ -3,7 +3,6 @@
 from bs4 import BeautifulSoup                                      #
 import requests                                                    #
 import re                                                          #         
-#from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH #
 import tkinter as tk                                               # 
 ####################################################################
 
@@ -40,20 +39,3 @@ def get_lyrics(song, index):
      else:
           get_youtube_link(song,artist_name)
 get_lyrics(song,index)
-
-#file digestion
-
-def file_digest():
-    fileQ = 5 #placeholder value
-    #fileQ is the number of files
-    while fileQ != 0:
-         # Create MP3File instance.
-        mp3 = MP3File("test.mp3")
-        alb = mp3.album
-
-        #get the music tags
-        mp3Tags = mp3.get_tags()
-        
-        fileQ -= 1
-#file_digest() 
-
