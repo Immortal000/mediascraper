@@ -43,18 +43,3 @@ def get_lyrics(song, index):
           get_youtube_link(song,artist_name)
 get_lyrics(song,index)
 
-#file digestion
-
-def file_digest():
-    fileQ = 5 #placeholder value
-    #fileQ is the number of files
-    while fileQ != 0:
-         # Create MP3File instance.
-        mp3 = MP3File("audio.mp3")
-        alb = mp3.album
-        mp3.album("I am dumb")
-        mp3.save
-
-        fileQ -= 1
-file_digest() 
-
