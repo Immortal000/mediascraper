@@ -3,11 +3,9 @@
 from bs4 import BeautifulSoup                                      #
 import requests                                                    #
 import re                                                          #         
-from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH #
+#from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH #
 import tkinter as tk                                               # 
 ####################################################################
-
-'''We use https://lyricsmode.com for the lyrics'''
 
 global song, artist_name, index
 index = 12 
@@ -32,7 +30,7 @@ def get_lyrics(song, index):
      try: 
           lyrics = song_soup.find('div', id = "lyrics_text").text
           artist_name = song_soup.find('span', attrs={'class':'fs32'}).text
-          print(f"Song Name|{song}\nArtist Name|{artist_name}\nLyrics:\n{lyrics}\n Lyrics are from www.lyricsmode.com")     
+          print(f"Song Name|{song}\nArtist Name|{artist_name}\nLyrics:\n{lyrics}\n Lyrics are from www.https://lyricsmode.com")     
      except: 
          print('Song not found in database')
      answer = input('Is this the right song?')
@@ -57,5 +55,5 @@ def file_digest():
         mp3Tags = mp3.get_tags()
         
         fileQ -= 1
-file_digest() 
+#file_digest() 
 
