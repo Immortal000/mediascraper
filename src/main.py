@@ -7,6 +7,8 @@ from mp3_tagger import MP3File, VERSION_1, VERSION_2, VERSION_BOTH #
 import tkinter as tk                                               # 
 ####################################################################
 
+'''We use https://lyricsmode.com for the lyrics'''
+
 global song, artist_name, index
 index = 12 
 song = input('Song:')
