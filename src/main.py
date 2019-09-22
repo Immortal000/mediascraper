@@ -48,12 +48,11 @@ def file_digest():
     #fileQ is the number of files
     while fileQ != 0:
          # Create MP3File instance.
-        mp3 = MP3File("test.mp3")
+        mp3 = MP3File("audio.mp3")
         alb = mp3.album
+        mp3.album("I am dumb")
+        mp3.save
 
-        #get the music tags
-        mp3Tags = mp3.get_tags()
-        
         fileQ -= 1
 file_digest() 
 
