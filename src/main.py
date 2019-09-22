@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup                                      #
 import requests                                                    #
 import re                                                          #         
 ####################################################################
-'''lyrics from https://www.lyricsmode.com'''
+#lyrics from https://www.lyricsmode.com
 global song, artist_name, index
 index = 12 
 song = input('Song:')
