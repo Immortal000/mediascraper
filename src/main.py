@@ -1,11 +1,9 @@
-
 ####################################################################
 from bs4 import BeautifulSoup                                      #
 import requests                                                    #
 import re                                                          #         
-import tkinter as tk                                               # 
 ####################################################################
-
+'''lyrics from https://www.lyricsmode.com'''
 global song, artist_name, index
 index = 12 
 song = input('Song:')
@@ -15,7 +13,7 @@ def get_youtube_link(song,artist_name):
      soup = BeautifulSoup(website, 'lxml')
      for link in soup.findAll(attrs={'class':'yt-uix-tile-link'}):
           yt_links.append('https://www.youtube.com'+link['href'])
-     print(yt_links[0])
+     print(f'Youtube link for the song:{yt_links[0]}')
 
      
 def get_lyrics(song, index):
@@ -27,15 +25,16 @@ def get_lyrics(song, index):
      song_website = requests.get('https://www.lyricsmode.com'+links[index]).text
      song_soup = BeautifulSoup(song_website,'lxml')
      try: 
-          lyrics = song_soup.find('div', id = "lyrics_text").text
+          lyrics = song_soup.find('div', id = "lyrics_text").text.strip()
           artist_name = song_soup.find('span', attrs={'class':'fs32'}).text
-          print(f"Song Name|{song}\nArtist Name|{artist_name}\nLyrics:\n{lyrics}\n Lyrics are from www.https://lyricsmode.com")     
+          print(f"Song Name|{song}\nArtist Name|{artist_name}\n")
      except: 
          print('Song not found in database')
      answer = input('Is this the right song?')
-     if answer == 'no':
-          index = index + 2
-          get_lyrics(song,index)
-     else:
+     if answer == 'yes':
+          print(f"Lyrics:\n{lyrics}")     
           get_youtube_link(song,artist_name)
+     else:
+          index = index + 2 
+          get_lyrics(song,index)
 get_lyrics(song,index)
