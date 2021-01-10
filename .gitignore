@@ -1,3 +1,8 @@
 *.mp3
 .DS_Store
 ingest.py
+src/build/bdist.macosx-10.9-x86_64/python3.7-standalone/app/collect/__future__.pyc
+src/build/
+src/dist/
+src/build
+src/dist
